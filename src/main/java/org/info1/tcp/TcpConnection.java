@@ -54,8 +54,8 @@ public class TcpConnection implements Connection {
         new Thread(() -> {
             send("tester sending stuff\r\n".getBytes());
 
+            byte buf[] = new byte[64 * 1024];
             while (true) {
-                byte buf[] = new byte[64 * 1024];
                 try {
                     int count = inputStream.read(buf);
                     if (count > 0) {
