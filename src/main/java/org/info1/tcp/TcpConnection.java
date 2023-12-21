@@ -60,7 +60,9 @@ public class TcpConnection implements Connection {
                     int count = inputStream.read(buf);
                     if (count > 0) {
                         byte[] bytes = Arrays.copyOf(buf, count);
+
                         // TODO process there
+                        System.out.print(new String(bytes));
                     } else {
                         socket.close();
                         // TODO process there
